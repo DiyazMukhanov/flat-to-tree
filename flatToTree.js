@@ -3,9 +3,6 @@ const flatToTree = (flatArr, id = null, link = 'parentId' ) =>
             .filter(item => item[link] === id)
             .map(item => ({...item, children: flatToTree(flatArr, item.id)})) // и item['parentId]' ребенка станет item.id то есть айдишником родителя
 
-
-
-
 const flatArr = [
       { id: '1', name: 'name 1', parentId: null },
       { id: '2', name: 'name 2', parentId: null },
